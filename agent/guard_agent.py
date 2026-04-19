@@ -9,10 +9,10 @@ class AladdinGuardAgent:
         self.client = boto3.client('autoscaling')
 
     def analyze_and_act(self, cpu_utilization, is_market_open=True):
-        print(f"🤖 Aladdin Guard Agent: Analyzing system metrics at {datetime.now()}")
+        print(f"[AI] Aladdin Guard Agent: Analyzing system metrics at {datetime.now()}")
         print(f"DEBUG: CPU Utilization: {cpu_utilization}%, Market Open: {is_market_open}")
 
-        # 🧠 Operational Reasoning Engine
+        #  Operational Reasoning Engine
         recommendation = ""
         action_taken = False
 
@@ -27,7 +27,7 @@ class AladdinGuardAgent:
         else:
             recommendation = "System within healthy parameters. No action required."
 
-        print(f"🤖 AGENT REASONING: {recommendation}")
+        print(f"[AI] AGENT REASONING: {recommendation}")
         return {
             "timestamp": datetime.now().isoformat(),
             "action_taken": action_taken,
@@ -38,4 +38,4 @@ if __name__ == "__main__":
     agent = AladdinGuardAgent("aladdin-core-asg")
     # Simulate a FinOps optimization opportunity
     report = agent.analyze_and_act(cpu_utilization=15, is_market_open=False)
-    print(f"✅ Final Agent Report: {json.dumps(report, indent=2)}")
+    print(f"[SUCCESS] Final Agent Report: {json.dumps(report, indent=2)}")

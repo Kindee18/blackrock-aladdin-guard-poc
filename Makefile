@@ -8,9 +8,9 @@ help:
 	@echo "  make test     Run unit tests for the agent logic"
 
 agent:
-	@echo "🚀 Starting Aladdin Guard Agent..."
+	@echo "[START] Starting Aladdin Guard Agent..."
 	@python3 agent/guard_agent.py
 
 test:
-	@echo "🛠️ Running agent logic verification..."
+	@echo "[SETUP] Running agent logic verification..."
 	@python3 -m unittest tests/test_agent.py

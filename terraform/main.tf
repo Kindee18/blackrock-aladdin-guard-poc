@@ -2,7 +2,7 @@ provider "aws" {
   region = "us-east-1"
 }
 
-# 🏦 Aladdin Infrastructure Simulation
+# [FINANCE] Aladdin Infrastructure Simulation
 # Auto-Scaling Group for financial microservices
 resource "aws_launch_template" "aladdin_svc" {
   name_prefix   = "aladdin-service-"
@@ -29,7 +29,7 @@ resource "aws_autoscaling_group" "aladdin_asg" {
   }
 }
 
-# 📊 FinOps Guard: CloudWatch Metric for Cost/Usage Tracking
+# [METRICS] FinOps Guard: CloudWatch Metric for Cost/Usage Tracking
 resource "aws_cloudwatch_metric_alarm" "high_cost_usage" {
   alarm_name          = "aladdin-high-compute-usage"
   comparison_operator = "GreaterThanThreshold"
@@ -47,7 +47,7 @@ resource "aws_sns_topic" "alerts" {
   name = "aladdin-guard-alerts"
 }
 
-# 🔐 Security & Compliance: S3 for Aladdin Data with Encryption
+# [SECURITY] Security & Compliance: S3 for Aladdin Data with Encryption
 resource "aws_s3_bucket" "financial_data" {
   bucket = "blackrock-aladdin-data-demo"
 }
