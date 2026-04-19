@@ -25,7 +25,7 @@ jobs:
 
     - name: Run Agent Logic Verification
       run: |
-        echo "🚀 Starting AI Reliability Audit..."
+        echo "[START] Starting AI Reliability Audit..."
         python3 -m unittest tests/test_agent.py
 
   validate-infrastructure:
@@ -43,4 +43,4 @@ jobs:
         cd terraform
         terraform init -backend=false
         terraform validate
-        echo "✅ Infrastructure validation passed."
+        echo "[SUCCESS] Infrastructure validation passed."
